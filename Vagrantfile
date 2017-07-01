@@ -4,7 +4,8 @@ require 'fileutils'
 domains = {
   frontend: 'y2aa-frontend.dev',
   backend:  'y2aa-backend.dev',
-  api:  'y2aa-api.dev'
+  api:  'y2aa-api.dev',
+  auth:  'y2aa-auth.dev/ping'
 }
 
 config = {
@@ -69,5 +70,5 @@ Vagrant.configure(2) do |config|
   config.vm.provision 'shell', path: './vagrant/provision/always-as-root.sh', run: 'always'
 
   # post-install message (vagrant console)
-  config.vm.post_up_message = "Frontend URL: http://#{domains[:frontend]}\nBackend URL: http://#{domains[:backend]}\nApi URL: http://#{domains[:api]}"
+  config.vm.post_up_message = "Frontend URL: http://#{domains[:frontend]}\nBackend URL: http://#{domains[:backend]}\nApi URL: http://#{domains[:api]}\nAuth URL: http://#{domains[:auth]}"
 end
