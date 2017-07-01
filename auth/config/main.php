@@ -5,19 +5,15 @@ $params = array_merge(
     require(__DIR__ . '/params.php'),
     require(__DIR__ . '/params-local.php')
 );
+$clients  = require(__DIR__ . '/clients.php');
 $rules  = require(__DIR__ . '/rules.php');
 
 return [
-    'id' => 'app-api',
+    'id' => 'app-auth',
     'basePath' => dirname(__DIR__),
-    'controllerNamespace' => 'api\controllers',
+    'controllerNamespace' => 'auth\controllers',
     'bootstrap' => ['log'],
-    'modules' => [
-        'v1' => [
-            'basePath' => '@api/modules/v1',
-            'class' => 'api\modules\v1\Module'
-        ]
-    ],
+    'modules' => [],
     'components' => [
         'request' => [
             'parsers' => [
@@ -25,10 +21,14 @@ return [
             ]
         ],
         'user' => [
-            'identityClass'   => 'api\common\models\User',
+            'identityClass'   => 'auth\models\User',
             'enableSession'   => false,
             'enableAutoLogin' => false,
             'loginUrl'        => null,
+        ],
+        'client' => [
+            'class'   => 'auth\models\Client',
+            'dataList' => $clients,
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,

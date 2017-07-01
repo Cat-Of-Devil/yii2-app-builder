@@ -11,7 +11,7 @@ class User extends common\models\User
      */
     public static function findIdentityByAccessToken($token, $type = null)
     {
-        $user = Yii::$app->cache->get($token);
-        return ($user) ? new static($user) : null;
+        $user_id = Yii::$app->cache->get($token);
+        return ($user_id) ? new static(['id' => $user_id]) : null;
     }
 }

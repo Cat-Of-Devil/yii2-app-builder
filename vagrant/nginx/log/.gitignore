@@ -5,3 +5,5 @@ frontend-access.log
 frontend-error.log
 api-access.log
 api-error.log
+auth-access.log
+auth-error.log
