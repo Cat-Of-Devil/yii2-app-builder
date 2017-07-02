@@ -37,6 +37,11 @@ return [
             'frontend/runtime',
             'frontend/web/assets',
             'api/runtime',
+            /**
+             * assets for temporary use in dev mode to render web based extensions like yii2-debug or gii.
+             * It shouldn't exist in production mode as it shouldn't be needed by REST apps.
+             */
+            'api/web/assets',
             'auth/runtime',
         ],
         'setExecutable' => [
