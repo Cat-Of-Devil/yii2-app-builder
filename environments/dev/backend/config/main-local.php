@@ -20,6 +20,36 @@ if (!YII_ENV_TEST) {
     $config['modules']['gii'] = [
         'class' => 'yii\gii\Module',
     ];
+
+    $config['bootstrap'][] = 'builder';
+    $config['modules']['builder'] = [
+        'class' => 'tunecino\builder\Module',
+        'yiiScript' => dirname(dirname(__DIR__)) . '/yii',
+        'commands' => [
+            [
+                'class' => 'tunecino\builder\generators\migration\Generator'
+            ],
+
+            // run default app migration scripts if any
+            'yii migrate/up --interactive=0',
+
+            [
+                'class' => 'tunecino\builder\generators\model\Generator',
+                'defaultAttributes' => [
+                    'ns' => 'backend\models',
+                    'queryNs' => 'backend\models',
+                ],
+            ],
+            [
+                'class' => 'tunecino\builder\generators\crud\Generator',
+                'defaultAttributes' => [
+                    'baseViewPath' => '@backend/views',
+                    'modelNamespace' => 'backend\models',
+                    'controllerNamespace' => 'backend\controllers',
+                ],
+            ]
+        ],
+    ];
 }
 
 return $config;
