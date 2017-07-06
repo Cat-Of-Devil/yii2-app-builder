@@ -34,8 +34,7 @@ if (!YII_ENV_TEST) {
         'class' => 'tunecino\builder\Module',
         'yiiScript' => dirname(dirname(__DIR__)) . '/yii',
         'previewUrlCallback' => function($entity) {
-            $module = $entity->schema->module;
-            $moduleName = ($module && $module->generateAsModule && $module->moduleID) ? $module->moduleID . '/' : '';
+            $moduleName = $entity->schema->moduleID ? $entity->schema->moduleID . '/' : '';
             return \yii\helpers\Url::toRoute( '/' . $moduleName . \yii\helpers\Inflector::pluralize($entity->name) , true);
         },
         'commands' => [
@@ -69,8 +68,7 @@ if (!YII_ENV_TEST) {
                 ],
             ],
             function($schema) {
-                $module = $schema->module;
-                $moduleName = ($module && $module->generateAsModule && $module->moduleID) ? $module->moduleID . '/' : '';
+                $moduleName = $schema->moduleID ? $schema->moduleID . '/' : '';
                 $ctrlNames = \yii\helpers\ArrayHelper::getColumn($schema->entities,'name');
                 $controllers = '';
                 for ($i=0; $i < count($ctrlNames); $i++) { 
