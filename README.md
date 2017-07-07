@@ -5,14 +5,14 @@ yii2-app-builder
 
 This is a fork of [yiisoft/yii2-app-advanced](https://github.com/yiisoft/yii2-app-advanced) template to which I have added the following:
 
- - **api** folder as implementation of [Yii2 RESTful API framework](http://www.yiiframework.com/doc-2.0/guide-rest-quick-start.html)
- - **auth** folder to proved access/refresh tokens as implementation of [OAuth 2.0](https://tools.ietf.org/html/rfc6749). *(documentation and examples to be added later)*
+ - :file_folder:`api` folder as implementation of [Yii2 RESTful API framework](http://www.yiiframework.com/doc-2.0/guide-rest-quick-start.html)
+ - :file_folder:`auth` folder to proved access/refresh tokens as implementation of [OAuth 2.0](https://tools.ietf.org/html/rfc6749). *(documentation and examples to be added later)*
  - [tunecino/yii2-schema-builder](https://github.com/tunecino/yii2-schema-builder) extension to both `frontend` and `api` apps.
 
-My plan is to keep this fork up-to-date with the official template while keep improving the builder and RESTful related stuff.
+The plan is to keep this fork up-to-date with official template while keep improving builder & RESTful related stuff.
 
 ## Installation 
-Installation is similar to [yiisoft/yii2-app-advanced](https://github.com/yiisoft/yii2-app-advanced) template. see [full steps here](https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide/start-installation.md). Except that the composer command for this fork is:
+Installation is almost similar to [yiisoft/yii2-app-advanced](https://github.com/yiisoft/yii2-app-advanced) template. see [full steps here](https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide/start-installation.md). Except that the composer command for this fork is:
 ```
 composer create-project --prefer-dist tunecino/yii2-app-builder your-app-name
 ```
