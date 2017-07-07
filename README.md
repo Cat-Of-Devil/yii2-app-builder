@@ -14,7 +14,7 @@ The plan is to keep this fork up-to-date with official template while keep impro
 ## Installation 
 Installation is almost similar to [yiisoft/yii2-app-advanced](https://github.com/yiisoft/yii2-app-advanced) template. see [full steps here](https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide/start-installation.md). Except that the composer command for this fork is:
 ```
-composer create-project --prefer-dist tunecino/yii2-app-builder your-app-name
+composer create-project --prefer-dist tunecino/yii2-app-builder=2.0.13-RC your-app-name
 ```
 And extra server configurations for `api.dev` and `auth.dev` should be made same as it is done for `frontend.dev` and `backend.dev`. Alternatively you can also use vagrant.
 
