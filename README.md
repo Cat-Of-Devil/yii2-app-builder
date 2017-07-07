@@ -1,55 +1,22 @@
-Yii 2 Advanced Project Template
-===============================
+yii2-app-builder
+==============
+[![Latest Stable Version](https://poser.pugx.org/tunecino/yii2-app-builder/v/stable)](https://packagist.org/packages/tunecino/yii2-app-builder)
+[![Total Downloads](https://poser.pugx.org/tunecino/yii2-app-builder/downloads)](https://packagist.org/packages/tunecino/yii2-app-builder)
 
-Yii 2 Advanced Project Template is a skeleton [Yii 2](http://www.yiiframework.com/) application best for
-developing complex Web applications with multiple tiers.
+This is a fork of [yiisoft/yii2-app-advanced](https://github.com/yiisoft/yii2-app-advanced) template to which I have added the following:
 
-The template includes three tiers: front end, back end, and console, each of which
-is a separate Yii application.
+ - **api** folder as implementation of [Yii2 RESTful API framework](http://www.yiiframework.com/doc-2.0/guide-rest-quick-start.html)
+ - **auth** folder to proved access/refresh tokens as implementation of [OAuth 2.0](https://tools.ietf.org/html/rfc6749). *(documentation and examples to be added later)*
+ - [tunecino/yii2-schema-builder](https://github.com/tunecino/yii2-schema-builder) extension to both `frontend` and `api` apps.
 
-The template is designed to work in a team development environment. It supports
-deploying the application in different environments.
+My plan is to keep this fork up-to-date with the official template while keep improving the builder and RESTful related stuff.
 
-Documentation is at [docs/guide/README.md](docs/guide/README.md).
-
-[![Latest Stable Version](https://poser.pugx.org/yiisoft/yii2-app-advanced/v/stable.png)](https://packagist.org/packages/yiisoft/yii2-app-advanced)
-[![Total Downloads](https://poser.pugx.org/yiisoft/yii2-app-advanced/downloads.png)](https://packagist.org/packages/yiisoft/yii2-app-advanced)
-[![Build Status](https://travis-ci.org/yiisoft/yii2-app-advanced.svg?branch=master)](https://travis-ci.org/yiisoft/yii2-app-advanced)
-
-DIRECTORY STRUCTURE
--------------------
-
+## Installation 
+Installation is similar to [yiisoft/yii2-app-advanced](https://github.com/yiisoft/yii2-app-advanced) template. see [full steps here](https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide/start-installation.md). Except that the composer command for this fork is:
 ```
-common
-    config/              contains shared configurations
-    mail/                contains view files for e-mails
-    models/              contains model classes used in both backend and frontend
-    tests/               contains tests for common classes    
-console
-    config/              contains console configurations
-    controllers/         contains console controllers (commands)
-    migrations/          contains database migrations
-    models/              contains console-specific model classes
-    runtime/             contains files generated during runtime
-backend
-    assets/              contains application assets such as JavaScript and CSS
-    config/              contains backend configurations
-    controllers/         contains Web controller classes
-    models/              contains backend-specific model classes
-    runtime/             contains files generated during runtime
-    tests/               contains tests for backend application    
-    views/               contains view files for the Web application
-    web/                 contains the entry script and Web resources
-frontend
-    assets/              contains application assets such as JavaScript and CSS
-    config/              contains frontend configurations
-    controllers/         contains Web controller classes
-    models/              contains frontend-specific model classes
-    runtime/             contains files generated during runtime
-    tests/               contains tests for frontend application
-    views/               contains view files for the Web application
-    web/                 contains the entry script and Web resources
-    widgets/             contains frontend widgets
-vendor/                  contains dependent 3rd-party packages
-environments/            contains environment-based overrides
+composer create-project --prefer-dist tunecino/yii2-app-builder your-app-name
 ```
+And extra server configurations for `api.dev` and `auth.dev` should be made same as it is done for `frontend.dev` and `backend.dev`. Alternatively you can also use vagrant.
+
+## Usage
+After installing the template, configuring DB and init the dev mode, go to either `frontend.dev/builder` or `api.dev/builder`, use the [GUI](https://github.com/tunecino/yii2-schema-builder) to prototype your app then hit that Generate button. If it says DONE, the preview link of each entity should take you to a working app.

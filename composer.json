@@ -1,16 +1,13 @@
 {
-    "name": "yiisoft/yii2-app-advanced",
-    "description": "Yii 2 Advanced Project Template",
-    "keywords": ["yii2", "framework", "advanced", "project template"],
-    "homepage": "http://www.yiiframework.com/",
+    "name": "tunecino/yii2-app-builder",
+    "description": "Fork of Yii 2 Advanced Project Template With RESTful API, OAuth 2.0 and Schema Builder",
+    "keywords": ["yii2", "framework", "advanced", "project template", "builder", "rest", "bearer", "rest authentication"],
     "type": "project",
     "license": "BSD-3-Clause",
     "support": {
-        "issues": "https://github.com/yiisoft/yii2/issues?state=open",
-        "forum": "http://www.yiiframework.com/forum/",
-        "wiki": "http://www.yiiframework.com/wiki/",
-        "irc": "irc://irc.freenode.net/yii",
-        "source": "https://github.com/yiisoft/yii2"
+        "issues": "https://github.com/tunecino/yii2-app-builder/issues",
+        "wiki": "https://github.com/tunecino/yii2-app-builder/wiki",
+        "source": "https://github.com/tunecino/yii2-app-builder"
     },
     "minimum-stability": "dev",
     "require": {
