@@ -17,7 +17,7 @@ If you do not have Composer, you may follow the instructions in the [Yii Guide](
 
 You can then install this project template using the following command:
 ```
-composer create-project --prefer-dist tunecino/yii2-app-builder=2.0.13rc1 your-app-name
+composer create-project --prefer-dist tunecino/yii2-app-builder your-app-name
 ```
 Once the command finish go inside the created folder and init the app on `dev` mode same as you usually do with the [advanced template](https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide/start-installation.md#preparing-application):
 
